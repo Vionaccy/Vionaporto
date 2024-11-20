@@ -1,0 +1,191 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #fff0f6; /* Soft pink background */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: #ff77a1; /* Soft pink color */
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffe1e6; /* Very light pink */
+}
+
+.top-btn {
+    position: absolute;
+    right: 20px;
+}
+
+.nav-btn {
+    background: #ffe1e6; /* Light pink */
+    color: #ff77a1; /* Soft pink */
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded button */
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background: #ff77a1; /* Soft pink */
+    color: #fff; /* White text on hover */
+}
+
+/* Home Section Styles */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background: #fff;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #ff77a1; /* Soft pink */
+}
+
+.home-content h3 {
+    font-size: 24px;
+}
+
+.home-content p {
+    margin: 20px 0;
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.social-media {
+    margin: 20px 0;
+}
+
+.social-media a {
+    color: #ff77a1; /* Soft pink */
+    font-size: 28px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #ff4f81; /* Slightly darker pink */
+}
+
+.home-img img {
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section Styles */
+.about {
+    display: flex;
+    padding: 50px 20px;
+    background: #fff;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.about-content {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+    color: #ff77a1; /* Soft pink */
+}
+
+.about-content p {
+    margin: 20px 0;
+}
+
+/* Portfolio Section Styles */
+.portfolio {
+    padding: 60px 20px;
+    background: #fff; /* White background for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-content .row {
+    background: #ffeef8; /* Soft pink */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.portfolio-content .row:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.portfolio-content .row img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+}
+
+.row-text {
+    padding: 15px;
+}
+
