@@ -75,7 +75,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 20px;
+    padding: 50px 40px;
     background: #fff;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -119,25 +119,82 @@ header {
     max-width: 400px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out infinite alternate; /* Menambahkan animasi */
+}
+.animation-container {
+    position: fixed; /* Agar tetap di posisi yang sama saat scroll */
+    right: 20px; /* Pindahkan ke kanan */
+    bottom: 20px; /* Pindahkan ke bawah */
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
 }
 
+.transparent-image {
+    width: 100px; /* Atur ukuran gambar sesuai kebutuhan */
+    height: auto; /* Mempertahankan rasio aspek */
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite; /* Animasi mengapung */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Bergerak ke atas */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/* Keyframes untuk animasi bounce */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Posisi awal */
+    }
+    50% {
+        transform: translateY(-15px); /* Posisi tengah */
+    }
+    100% {
+        transform: translateY(0); /* Kembali ke posisi awal */
+    }
+}
+/* Justified Text Style */
+.justified-text {
+    text-align: justify; /* Mengatur teks agar rata kiri dan kanan */
+}
 /* About Section Styles */
 .about {
     display: flex;
-    padding: 50px 20px;
-    background: #fff;
-    border-radius: 15px; /* Rounded corners */
+    align-items: center;
+    padding: 60px 20px;
+    background: #fff; /* White background for contrast */
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-img {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 .about-img img {
     max-width: 100%;
-    border-radius: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-in-out infinite alternate; /* Menambahkan animasi */
 }
+
+/* Keyframes untuk animasi slide */
+@keyframes slideIn {
+    0% {
+        transform: translateY(0); /* Posisi awal */
+    }
+    100% {
+        transform: translateY(-10px); /* Posisi akhir */
+    }
+}
+
 
 .about-content {
     flex: 2;
@@ -153,6 +210,10 @@ header {
     margin: 20px 0;
 }
 
+/* Justified Text Style */
+.justified-text {
+    text-align: justify; /* Mengatur teks agar rata kiri dan kanan */
+}
 /* Portfolio Section Styles */
 .portfolio {
     padding: 60px 20px;
@@ -171,12 +232,13 @@ header {
     background: #ffeef8; /* Soft pink */
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
 }
 
 .portfolio-content .row:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: translateY(-5px); /* Mengangkat card saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih dalam saat hover */
 }
 
 .portfolio-content .row img {
@@ -184,8 +246,114 @@ header {
     height: auto;
     border-radius: 15px 15px 0 0; /* Rounded top corners */
 }
-
+.row {
+    display: flex; /* Menggunakan flexbox untuk setiap baris */
+    flex-direction: column; /* Mengatur arah kolom untuk teks */
+    align-items: center; /* Mengatur agar gambar dan teks berada di tengah */
+    text-align: center; /* Mengatur teks agar berada di tengah */
+}
 .row-text {
     padding: 15px;
 }
+.portfolio-content .row:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+/* Contact Section Styles */
+.contact {
+    background-color: #ffe4e1; /* Soft pink background */
+    padding: 20px; /* Menambahkan padding untuk ruang di dalam */
+    border-radius: 10px; /* Membuat sudut membulat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    margin: 20px 0; /* Menambahkan margin atas dan bawah */
+}
+
+.contact h2 {
+    color: #d5006d; /* Warna teks untuk judul (pink gelap) */
+}
+
+.contact p {
+    color: #555; /* Warna teks untuk paragraf */
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column; /* Mengatur form menjadi kolom */
+}
+
+.contact label {
+    margin-top: 10px; /* Menambahkan jarak atas untuk label */
+}
+
+.contact input, .contact textarea {
+    padding: 10px; /* Menambahkan padding untuk input dan textarea */
+    margin-top: 5px; /* Menambahkan jarak atas untuk input dan textarea */
+    border: 1px solid #ccc; /* Border untuk input dan textarea */
+    border-radius: 5px; /* Sudut membulat untuk input dan textarea */
+}
+
+.contact button {
+    margin-top: 10px; /* Menambahkan jarak atas untuk tombol */
+    padding: 10px; /* Menambahkan padding untuk tombol */
+    background-color: #ff69b4; /* Warna latar belakang tombol (hot pink) */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Sudut membulat untuk tombol */
+    cursor: pointer; /* Mengubah kursor saat hover */
+}
+
+.contact button:hover {
+    background-color: #ff1493; /* Warna latar belakang tombol saat hover (deep pink) */
+}
+.input-box input, textarea {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek 3D */
+    transition: box-shadow 0.3s; /* Transisi untuk efek fokus */
+}
+
+.input-box input:focus, textarea:focus {
+    border-color: #ff4c81; /* Darker pink */
+    box-shadow: 0 0 10px rgba(255, 76, 129, 0.5), 
+                0 0 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih dalam saat fokus */
+}
+/* Footer Section Styles */
+.footer {
+    padding: 20px;
+    background: #fff; /* White background for contrast */
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.footer .social {
+    margin-bottom: 10px;
+}
+
+.footer .social a {
+    margin-right: 15px;
+    color: #ff4c81; /* Darker pink */
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.footer .social a:hover {
+    color: #ff6f91; /* Soft pink */
+}
+
+.footer p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.footer p a {
+    text-decoration: none;
+    color: #ff4c81; /* Darker pink */
+}
+
+.footer p a:hover {
+    color: #ff6f91; /* Soft pink */
+}
